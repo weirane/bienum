@@ -1,0 +1,112 @@
+
+\documentclass[a4paper, 10pt]{ctexart}
+\usepackage[hmargin=1.25in, vmargin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{mathtools}
+\usepackage{mathdots}% \iddots
+\usepackage{upgreek}
+\usepackage{listings}
+%\usepackage{enumitem}
+\usepackage{zhlipsum}
+\usepackage{xcolor}
+%\usepackage{pdflscape}% landscape a single page
+
+
+\newcommand*\answer[1]{\hspace*{\fill}\mbox{$\langle$}{\itshape #1}\mbox{$\rangle$}}
+\newcommand\dis{\displaystyle}
+
+
+\lstset{
+	basicstyle=\ttfamily\upshape,
+	columns=fullflexible,
+	language={[LaTeX]TeX},
+	numbers=left,	%行号
+	numberstyle=\rmfamily\slshape\small,
+	texcsstyle=*\color{green!50!black},
+	breaklines,
+	breakindent=25pt,
+	tabsize=2,
+	commentstyle=\rmfamily\itshape,
+	escapechar=`
+}
+
+\input{definition}
+
+\begin{document}
+\zhlipsum[17-19]
+
+\begin{enumerate}
+	\item this is an item
+		\begin{bienum}
+			\biitemxx{$xy^z=w$;}{$\mathrm{e}^x$;}
+			\biitemxx{$xy^z=w$;}{$\mathrm{e}^x$;}
+			\biitemxx{$xy^z=w$; toooooooooooo lo\-o\-o\-o\-o\-oong! }{$\mathrm{e}^x$;}
+			\biitemxx{$xy^z=w$;}{$\mathrm{e}^x$;}
+			\biitemxx{$xy^z=w$;}{$\mathrm{e}^x$;}
+			\biitemxx{$xy^z=w$;}{$\mathrm{e}^x$;}
+			\biitemxx{$xy^z=w$;}{does well when changing page}
+			\biitemxx{$xy^z=w$;}{$\mathrm{e}^x$;}
+			\biitemxx{$xy^z=w$;}{will not step into the right margin if it's too long}
+			\biitemx{\rule{0pt}{2.8ex}you may want to put it in a single line. }
+			\biitemxx{add some displayed math}{$\dfrac12$}
+			\biitemxx{$\displaystyle\int_0^\uppi\sin x\,\mathrm{d}x=2$\label{biitem:intsin}}{$\dfrac{xyz}{\mathrm{e}^x}$}
+			\biitemxx{$\begin{vmatrix*}[r]
+					1  &  0  &  1  & -4 \\
+					-1 & -3  & -4  & -2 \\
+					2  & -1  &  4  &  4 \\
+					2  &  3  & -3  &  2
+			\end{vmatrix*}$;}{$
+				\begin{vmatrix*}[r]
+					1  &  4  & -1  & -1 \\
+					1  & -2  & -1  &  1 \\
+					-3 &  3  & -4  & -2 \\
+					0  &  1  & -1  & -1
+			\end{vmatrix*}$;}
+			\biitemxx{$\begin{vmatrix*}[r]
+					x+a & x+b & x+c \\
+					y+a & y+b & y+c \\
+					z+a & z+b & z+c 
+			\end{vmatrix*}$;}{$
+				\begin{vmatrix*}[r]
+					&			    & 				& \bm A_1 \\
+					&    			& \bm A_2 & 				\\
+					& \iddots  & 				& 				\\
+					\bm A_k  &  &  & 
+			\end{vmatrix*}$, \makebox[0pt][l]{$\bm A_i$是$n_i$阶方阵;}}
+			\biitemx{根据第~\ref{biitem:intsin}~小题，……}
+		\end{bienum}
+	\item something below
+		\begin{bienum}[6em]
+			\biitemxx{left things}{如果右边的内容太长，可以将第二列适当左移}
+			\biitemxx{left}{well aligned}
+		\end{bienum}
+	\item 事实上很少出现一个 item 过长的情况
+	\item 求下列极限：
+		\begin{bienum}[-14pt]
+			\biitemxx{$\dis\lim_{x\to 0}\dfrac{\sqrt{2}-\sqrt{1+\cos x}}{\sin^2 x}$\answer{$\dfrac{\sqrt2}8$}}%
+			{$\dis\lim_{x\to 0}\frac{\sqrt{1+x+x^2}-1}{\sin2x}$\answer{$\dfrac14$}}
+			\biitemxx{$\dis\lim_{x\to 0}\frac{(\sqrt[10]{1+\tan x}-1)(\sqrt{1+x}-1)}{2x\sin x}$\answer{$\dfrac{1}{40}$}}
+			{$\dis\lim_{x\to -\infty}x(\sqrt{x^2+100}+x)$\answer{$-50$}}
+			\biitemxx{$\dis\lim_{x\to 1}\frac{1}{x-1}\Bigl(\sum_{k=1}^m x^k-m\Bigr)$\answer{$\dfrac{m(m+1)}2$}}
+			{$\dis\lim_{x\to 2^+}\frac{[x]^2-4}{x^2-4}$\answer{$0$}}
+			\biitemxx{$\dis\lim_{x\to 0}\frac{1}{x^2}\Bigl(1-\prod_{k=1}^n\cos kx\Bigr)$\answer{$\dfrac{n(n+1)(2n+1)}{12}$}}
+			{$\dis\lim_{x\to 0}\frac{(1+x+x^2)^{\frac1n}-1}{\sin 2x}$\answer{$\dfrac1{2n}$}}
+		\end{bienum}
+\end{enumerate}
+
+\zhlipsum[13]\bigskip
+
+目前发现的问题：
+\begin{itemize}
+	\item 如果 item 要换行，行间的间距不匀称
+\end{itemize}
+
+\newpage\pagestyle{empty}
+\noindent {\Large 代码: }
+
+\lstinputlisting{definition.tex}
+
+
+\end{document}
+
