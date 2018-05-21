@@ -1,16 +1,13 @@
 
 \documentclass[a4paper, 10pt]{ctexart}
 \usepackage[hmargin=1.25in, vmargin=1in]{geometry}
-\usepackage{amsmath}
+\usepackage{amsmath, mathtools}
 \usepackage{bm}
-\usepackage{mathtools}
 \usepackage{mathdots}% \iddots
 \usepackage{upgreek}
 \usepackage{listings}
-%\usepackage{enumitem}
 \usepackage{zhlipsum}
 \usepackage{xcolor}
-%\usepackage{pdflscape}% landscape a single page
 
 
 \newcommand*\answer[1]{\hspace*{\fill}\mbox{$\langle$}{\itshape #1}\mbox{$\rangle$}}
@@ -21,7 +18,7 @@
 	basicstyle=\ttfamily\upshape,
 	columns=fullflexible,
 	language={[LaTeX]TeX},
-	numbers=left,	%行号
+	numbers=left,
 	numberstyle=\rmfamily\slshape\small,
 	texcsstyle=*\color{green!50!black},
 	breaklines,
@@ -33,8 +30,14 @@
 
 \input{definition}
 
+
+\title{\textsf{bienum} 环境示例}
+\author{}
+
+
 \begin{document}
-\zhlipsum[17-19]
+\maketitle
+\zhlipsum[18-19]
 
 \begin{enumerate}
 	\item this is an item
