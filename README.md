@@ -1,5 +1,5 @@
 # `bienum`: a double column sub-enumerate environment
-usage:
+Usage:
 
 ```tex
 \begin{enumerate}
@@ -13,9 +13,12 @@ usage:
 ```
 
 which will render:
+
 ```text
 1. blah blah
    (1) item                    (2) item
    (3) single line item
    (4) item                    (5) item
 ```
+
+the optional argument is the length for which the right column moves left.
