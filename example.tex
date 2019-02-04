@@ -1,0 +1,27 @@
+\documentclass{article}
+
+\input{bienum.tex}
+
+\title{\textsf{bienum} environment example}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{enumerate}
+	\item this is an item
+		\begin{bienum}
+			\biitemxx{left item}{right item}
+			\biitemx{put long items in a single line is a good idea.}
+			\biitemxx{add some displayed math}{$\displaystyle\int_0^1\sin x\,\mathrm{d}x$\label{biitem:blah}}
+			\biitemxx{ref to the integral: \ref{biitem:blah}}{right}
+		\end{bienum}
+	\item something below
+		\begin{bienum}[5em]
+			\biitemxx{left item}{move the right column to the left for \texttt{5em}}
+			\biitemxx{left item}{well aligned}
+		\end{bienum}
+\end{enumerate}
+
+\end{document}

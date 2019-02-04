@@ -1,12 +1,21 @@
 # `bienum`: a double column sub-enumerate environment
-usage: 
+usage:
+
 ```tex
 \begin{enumerate}
   \item blah blah
     \begin{bienum}[<left-move length>]
-      \itemxx{<item>}{<item>}
-      \itemx{<single line item>}
+      \itemxx{item}{item}
+      \itemx{single line item}
+      \itemxx{item}{item}
     \end{bienum}
 \end{enumerate}
 ```
 
+which will render:
+```text
+1. blah blah
+   (1) item                    (2) item
+   (3) single line item
+   (4) item                    (5) item
+```
