@@ -2,6 +2,9 @@
 Usage:
 
 ```tex
+% In preamble:
+% \input{bienum.tex}
+
 \begin{enumerate}
   \item blah blah
     \begin{bienum}[<left-move length>]
